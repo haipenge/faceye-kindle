@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:电子书 - book : 业务对像:电子书 - Book,web tiles模板配置 -->
+    <!-- 作者:haipenge -->
+    <!-- 创建日期:2016-8-2 11:06:41 -->
+    <!-- 电子书 : Book web 首页(列表页) -->
+	<definition name="book.book.home" extends="default.web">
+	    <put-attribute name="default-center" value="/component/book/book/book_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 电子书 新增,编辑页面 -->
+	<definition name="book.book.update" extends="default.web">
+	    <put-attribute name="default-center" value="/component/book/book/book_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 电子书 明细页 -->
+	<definition name="book.book.detail" extends="default.web">
+	    <put-attribute name="default-center" value="/component/book/book/book_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

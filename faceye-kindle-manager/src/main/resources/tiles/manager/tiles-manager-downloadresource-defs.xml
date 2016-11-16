@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:电子书 - book : 业务对像:下载资源 - DownloadResource, 管理后台 tiles模板配置 -->
+    <!-- 作者:haipenge -->
+    <!-- 创建日期:2016-8-2 11:06:39 -->
+    <!-- 下载资源 : DownloadResource 管理 首页(列表页) -->
+	<definition name="book.downloadResource.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="book.downloadResource.center"></put-attribute>
+	</definition>
+	<definition name="book.downloadResource.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/book/downloadResource/downloadResource_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 下载资源 新增,编辑页面 -->
+	<definition name="book.downloadResource.update" extends="default.manager">
+	    <put-attribute name="default-center" value="book.downloadResource.update.center"></put-attribute>
+	</definition>
+	<definition name="book.downloadResource.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/book/downloadResource/downloadResource_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 下载资源 明细页 -->
+	<definition name="book.downloadResource.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="book.downloadResource.detail.center"></put-attribute>
+	</definition>
+	<definition name="book.downloadResource.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/book/downloadResource/downloadResource_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>
