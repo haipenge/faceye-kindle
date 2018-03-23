@@ -66,7 +66,7 @@ public class DownloadResource implements Serializable {
 
 	public String getUrl() {
 		if (StringUtils.isNotEmpty(url) && !StringUtils.startsWith(url, "http")) {
-			url = BeanContextUtil.getInstance().getBean(PropertyService.class).get("image.server") + url;
+			url = BeanContextUtil.getBean(PropertyService.class).get("image.server") + url;
 		}
 		return url;
 	}

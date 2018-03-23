@@ -1,7 +1,7 @@
 package com.faceye.component.book.repository.mongo.gen;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.querydsl.QueryDslPredicateExecutor;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
 import com.faceye.component.book.entity.BookTag;
 import com.faceye.feature.repository.mongo.BaseMongoRepository;

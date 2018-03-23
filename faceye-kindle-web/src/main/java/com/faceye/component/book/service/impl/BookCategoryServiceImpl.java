@@ -12,7 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
-import com.faceye.feature.util.ServiceException;
+ 
 
 import com.faceye.component.book.entity.BookCategory;
 import com.faceye.component.book.repository.mongo.BookCategoryRepository;
@@ -46,7 +46,7 @@ public class BookCategoryServiceImpl extends BaseMongoServiceImpl<BookCategory, 
      * 创建日期:2016-8-2 11:06:38<br>
 	*/
 	@Override
-	public Page<BookCategory> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<BookCategory> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}
@@ -74,7 +74,7 @@ public class BookCategoryServiceImpl extends BaseMongoServiceImpl<BookCategory, 
 		//	res = new PageImpl<BookCategory>(items);
 
 		//}
-		return dao.getPage(searchParams,page,size);
+		return getPage(searchParams,page,size);
 	}
 	
 	

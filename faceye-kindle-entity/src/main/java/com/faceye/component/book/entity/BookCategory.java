@@ -3,6 +3,8 @@ package com.faceye.component.book.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -71,6 +73,7 @@ public class BookCategory implements Serializable {
     * @author haipenge<br>
     */
     @DateTimeFormat(pattern="yyyy-MM-dd hh24:mi:ss")
+    @CreatedDate
 	private  Date createDate=new Date();
 	public Date getCreateDate() {
 		return createDate;

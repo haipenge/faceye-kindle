@@ -12,7 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
-import com.faceye.feature.util.ServiceException;
+ 
 
 import com.faceye.component.book.entity.Author;
 import com.faceye.component.book.repository.mongo.AuthorRepository;
@@ -46,7 +46,7 @@ public class AuthorServiceImpl extends BaseMongoServiceImpl<Author, Long, Author
      * 创建日期:2016-8-2 11:06:40<br>
 	*/
 	@Override
-	public Page<Author> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Author> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}
@@ -74,7 +74,7 @@ public class AuthorServiceImpl extends BaseMongoServiceImpl<Author, Long, Author
 		//	res = new PageImpl<Author>(items);
 
 		//}
-		return dao.getPage(searchParams,page,size);
+		return getPage(searchParams,page,size);
 	}
 
 	@Override

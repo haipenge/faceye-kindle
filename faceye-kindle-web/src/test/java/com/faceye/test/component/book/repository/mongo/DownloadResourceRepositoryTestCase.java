@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.book.entity.DownloadResource;
 import com.faceye.component.book.repository.mongo.DownloadResourceRepository;
@@ -34,24 +34,24 @@ public class DownloadResourceRepositoryTestCase extends BaseRepositoryTestCase {
 		DownloadResource downloadResource = new DownloadResource();
 		this.downloadResourceRepository.save(downloadResource);
 		Iterable<DownloadResource> downloadResources = this.downloadResourceRepository.findAll();
-		Assert.isTrue(downloadResources.iterator().hasNext());
+		Assert.assertTrue(downloadResources.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		DownloadResource downloadResource = new DownloadResource();
 		this.downloadResourceRepository.save(downloadResource);
-        this.downloadResourceRepository.delete(downloadResource.getId());
+        this.downloadResourceRepository.deleteById(downloadResource.getId());
         Iterable<DownloadResource> downloadResources = this.downloadResourceRepository.findAll();
-		Assert.isTrue(!downloadResources.iterator().hasNext());
+		Assert.assertTrue(!downloadResources.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		DownloadResource downloadResource = new DownloadResource();
 		this.downloadResourceRepository.save(downloadResource);
-		downloadResource=this.downloadResourceRepository.findOne(downloadResource.getId());
-		Assert.isTrue(downloadResource!=null);
+		downloadResource=this.downloadResourceRepository.findById(downloadResource.getId()).get();
+		Assert.assertTrue(downloadResource!=null);
 	}
 
 	

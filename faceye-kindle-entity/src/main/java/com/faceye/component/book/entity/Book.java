@@ -232,7 +232,7 @@ public class Book implements Serializable {
 
 	public String getImgUrl() {
 		if (!StringUtils.startsWithIgnoreCase(imgUrl, "http")) {
-			imgUrl = BeanContextUtil.getInstance().getBean(PropertyService.class).get("image.server") + imgUrl;
+			imgUrl = BeanContextUtil.getBean(PropertyService.class).get("image.server") + imgUrl;
 		}
 		return imgUrl;
 	}

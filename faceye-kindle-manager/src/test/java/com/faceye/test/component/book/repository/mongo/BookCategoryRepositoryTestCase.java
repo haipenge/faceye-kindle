@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.book.entity.BookCategory;
 import com.faceye.component.book.repository.mongo.BookCategoryRepository;
@@ -34,24 +34,24 @@ public class BookCategoryRepositoryTestCase extends BaseRepositoryTestCase {
 		BookCategory bookCategory = new BookCategory();
 		this.bookCategoryRepository.save(bookCategory);
 		Iterable<BookCategory> bookCategorys = this.bookCategoryRepository.findAll();
-		Assert.isTrue(bookCategorys.iterator().hasNext());
+		Assert.assertTrue(bookCategorys.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		BookCategory bookCategory = new BookCategory();
 		this.bookCategoryRepository.save(bookCategory);
-        this.bookCategoryRepository.delete(bookCategory.getId());
+        this.bookCategoryRepository.deleteById(bookCategory.getId());
         Iterable<BookCategory> bookCategorys = this.bookCategoryRepository.findAll();
-		Assert.isTrue(!bookCategorys.iterator().hasNext());
+		Assert.assertTrue(!bookCategorys.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		BookCategory bookCategory = new BookCategory();
 		this.bookCategoryRepository.save(bookCategory);
-		bookCategory=this.bookCategoryRepository.findOne(bookCategory.getId());
-		Assert.isTrue(bookCategory!=null);
+		bookCategory=this.bookCategoryRepository.findById(bookCategory.getId()).get();
+		Assert.assertTrue(bookCategory!=null);
 	}
 
 	

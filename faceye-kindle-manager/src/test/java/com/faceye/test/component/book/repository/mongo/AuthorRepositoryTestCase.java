@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.book.entity.Author;
 import com.faceye.component.book.repository.mongo.AuthorRepository;
@@ -34,24 +34,24 @@ public class AuthorRepositoryTestCase extends BaseRepositoryTestCase {
 		Author author = new Author();
 		this.authorRepository.save(author);
 		Iterable<Author> authors = this.authorRepository.findAll();
-		Assert.isTrue(authors.iterator().hasNext());
+		Assert.assertTrue(authors.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Author author = new Author();
 		this.authorRepository.save(author);
-        this.authorRepository.delete(author.getId());
+        this.authorRepository.deleteById(author.getId());
         Iterable<Author> authors = this.authorRepository.findAll();
-		Assert.isTrue(!authors.iterator().hasNext());
+		Assert.assertTrue(!authors.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Author author = new Author();
 		this.authorRepository.save(author);
-		author=this.authorRepository.findOne(author.getId());
-		Assert.isTrue(author!=null);
+		author=this.authorRepository.findById(author.getId()).get();
+		Assert.assertTrue(author!=null);
 	}
 
 	

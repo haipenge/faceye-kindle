@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.book.entity.BookTag;
 import com.faceye.component.book.repository.mongo.BookTagRepository;
@@ -34,24 +34,24 @@ public class BookTagRepositoryTestCase extends BaseRepositoryTestCase {
 		BookTag bookTag = new BookTag();
 		this.bookTagRepository.save(bookTag);
 		Iterable<BookTag> bookTags = this.bookTagRepository.findAll();
-		Assert.isTrue(bookTags.iterator().hasNext());
+		Assert.assertTrue(bookTags.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		BookTag bookTag = new BookTag();
 		this.bookTagRepository.save(bookTag);
-        this.bookTagRepository.delete(bookTag.getId());
+        this.bookTagRepository.deleteById(bookTag.getId());
         Iterable<BookTag> bookTags = this.bookTagRepository.findAll();
-		Assert.isTrue(!bookTags.iterator().hasNext());
+		Assert.assertTrue(!bookTags.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		BookTag bookTag = new BookTag();
 		this.bookTagRepository.save(bookTag);
-		bookTag=this.bookTagRepository.findOne(bookTag.getId());
-		Assert.isTrue(bookTag!=null);
+		bookTag=this.bookTagRepository.findById(bookTag.getId()).get();
+		Assert.assertTrue(bookTag!=null);
 	}
 
 	
