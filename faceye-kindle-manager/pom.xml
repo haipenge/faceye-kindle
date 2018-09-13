@@ -80,7 +80,7 @@
 				<filtering>true</filtering>
 			</resource>
 			<resource>
-				<directory>../../faceye-security/faceye-security-manager-mongo/src/main/resources</directory>
+				<directory>../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/resources</directory>
 				<includes>
 					<include>tiles/manager/*.*</include>
 					<include>conf/applicationContext-security.xml</include>
@@ -121,7 +121,7 @@
 						<defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
 						<descriptor>src/main/webapp/WEB-INF/web.xml</descriptor>
 						<baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-							<resourcesAsCSV>src/main/webapp,../../faceye-feature-mongo/src/main/webapp,../../faceye-generate/faceye-generate-manager/src/main/webapp,../../faceye-security/faceye-security-manager-mongo/src/main/webapp,../../faceye-feature/src/main/webapp</resourcesAsCSV>
+							<resourcesAsCSV>src/main/webapp,../../faceye-feature-mongo/src/main/webapp,../../faceye-generate/faceye-generate-manager/src/main/webapp,../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/webapp,../../faceye-feature/src/main/webapp</resourcesAsCSV>
 						</baseResource>
 					</webApp>
 				</configuration>
@@ -184,7 +184,7 @@
 						</goals>
 						<configuration>
 							<dest>target/classes/i18n</dest>
-							<src>../../faceye-security/faceye-security-manager-mongo/src/main/resources/i18n</src>
+							<src>../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/resources/i18n</src>
 							<encoding>UTF-8</encoding>
 							<includes>
 								*.properties
@@ -199,7 +199,7 @@
 						</goals>
 						<configuration>
 							<dest>target/classes/i18n</dest>
-							<src>../../faceye-security/faceye-security-entity-mongo/src/main/resources/i18n</src>
+							<src>../../faceye-security-manager-mongo/faceye-security-entity-mongo/src/main/resources/i18n</src>
 							<encoding>UTF-8</encoding>
 							<includes>
 								*.properties
@@ -343,7 +343,7 @@
 									<filtering>true</filtering>
 								</resource>
 								<resource>
-									<directory>../../faceye-security/faceye-security-manager-mongo/src/main/webapp</directory>
+									<directory>../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/webapp</directory>
 								</resource>
 								<resource>
 									<directory>../../faceye-generate/faceye-generate-manager/src/main/webapp</directory>
@@ -387,7 +387,7 @@
 									<filtering>true</filtering>
 								</resource>
 								<resource>
-									<directory>../../faceye-security/faceye-security-manager-mongo/src/main/webapp</directory>
+									<directory>../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/webapp</directory>
 								</resource>
 								<resource>
 									<directory>../../faceye-generate/faceye-generate-manager/src/main/webapp</directory>
@@ -435,7 +435,7 @@
 									<filtering>true</filtering>
 								</resource>
 								<resource>
-									<directory>../../faceye-security/faceye-security-manager-mongo/src/main/webapp</directory>
+									<directory>../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/webapp</directory>
 								</resource>
 								<resource>
 									<directory>../../faceye-generate/faceye-generate-manager/src/main/webapp</directory>
@@ -459,7 +459,7 @@
 			</build>
 		</profile>
 		<profile>
-			<id>jdk-1.7</id>
+			<id>jdk-1.8</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 				<jdk>${jdk.version}</jdk>
